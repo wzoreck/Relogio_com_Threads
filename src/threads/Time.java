@@ -10,9 +10,15 @@ public class Time extends Thread {
 
 	@Override
 	public void run() {
-		for (int i = 0; i < 1000; i++)
-			System.out.println("Time test");
-		super.run();
+		while (true) {
+			try {
+				Thread.sleep(1000);
+				data.incrementOneSecond();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			super.run();	
+		}
 	}
 
 }

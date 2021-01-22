@@ -12,12 +12,18 @@ public class Data {
 		alarm = 0;
 	}
 
-	public String getClockTime() {
-		return null;
+	public int getClockTimeInSeconds() {
+		return seconds;
 	}
 
 	public void setClockTime(int seconds) {
 		this.seconds = seconds;
+	}
+
+	public void incrementOneSecond() {
+		if (seconds >= 86399) // IF 24 hours
+			seconds = 0;
+		seconds++;
 	}
 
 	public void startTimer() {

@@ -1,3 +1,8 @@
+/*
+ * Alunos: Daniel Wzoreck, Adam Slabadack
+ * 
+ */
+
 package application;
 
 import java.util.Scanner;

@@ -1,6 +1,12 @@
 package threads;
 
-public class Alarm extends Thread{
+public class Alarm extends Thread {
+	
+	Data data;
+	
+	public Alarm(Data data) {
+		this.data = data;
+	}
 
 	@Override
 	public void run() {
@@ -8,3 +14,6 @@ public class Alarm extends Thread{
 	}
 
 }
+
+// Verifica se o horário atual é igual ao horário em que o alarme está programado, se for
+// avisa o usuário;

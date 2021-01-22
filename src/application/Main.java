@@ -12,3 +12,11 @@ public class Main {
 	}
 
 }
+
+// Menu, com opções:
+//	▪ Ajustar horário;
+//	▪ Visualizar horário;
+//	▪ Iniciar cronômetro;
+//	▪ Parar cronômetro (e mostrar valor atual);
+//	▪ Zerar cronômetro;
+//	▪ Definir alarme;

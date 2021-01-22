@@ -77,7 +77,12 @@ public class Main {
 				break;
 
 			case 6:
-
+				System.out.print("Enter the hours: ");
+				hours = sc.nextInt();
+				System.out.print("Enter the minutes: ");
+				minutes = sc.nextInt();
+				data.creatAlarm(timeToSeconds(hours, minutes));
+				alarm.start();
 				break;
 
 			case 99:
@@ -100,6 +105,12 @@ public class Main {
 		int totalSeconds = hours * 3600;
 		totalSeconds += minutes * 60;
 		totalSeconds += seconds;
+		return totalSeconds;
+	}
+
+	public static int timeToSeconds(int hours, int minutes) {
+		int totalSeconds = hours * 3600;
+		totalSeconds += minutes * 60;
 		return totalSeconds;
 	}
 

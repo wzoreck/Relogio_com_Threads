@@ -20,7 +20,7 @@ public class Data {
 		this.seconds = seconds;
 	}
 
-	public void incrementOneSecond() {
+	public void incrementSeconds() {
 		if (seconds >= 86399) // IF 24 hours
 			seconds = 0;
 		seconds++;
@@ -40,5 +40,9 @@ public class Data {
 
 	public void creatAlarm(int seconds) {
 		alarm = seconds;
+	}
+
+	public int getAlarm() {
+		return alarm;
 	}
 }

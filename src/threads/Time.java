@@ -13,7 +13,7 @@ public class Time extends Thread {
 		while (true) {
 			try {
 				Thread.sleep(1000);
-				data.incrementOneSecond();
+				data.incrementSeconds();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

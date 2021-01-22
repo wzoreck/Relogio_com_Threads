@@ -1,10 +1,10 @@
 package threads;
 
 public class Stopwatch extends Thread {
-	
+
 	Data data;
 	private boolean state;
-	
+
 	public Stopwatch(Data data) {
 		this.data = data;
 	}
@@ -19,10 +19,10 @@ public class Stopwatch extends Thread {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			super.run();	
+			super.run();
 		}
 	}
-	
+
 	public void setState(boolean state) {
 		this.state = state;
 	}

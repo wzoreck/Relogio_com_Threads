@@ -3,6 +3,7 @@ package threads;
 public class Stopwatch extends Thread {
 	
 	Data data;
+	private boolean state;
 	
 	public Stopwatch(Data data) {
 		this.data = data;
@@ -10,7 +11,20 @@ public class Stopwatch extends Thread {
 
 	@Override
 	public void run() {
-		super.run();
+		while (true) {
+			try {
+				Thread.sleep(1000);
+				if (state)
+					data.incrementTimer();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			super.run();	
+		}
+	}
+	
+	public void setState(boolean state) {
+		this.state = state;
 	}
 
 }

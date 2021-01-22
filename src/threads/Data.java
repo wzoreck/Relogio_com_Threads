@@ -26,16 +26,16 @@ public class Data {
 		seconds++;
 	}
 
-	public void startTimer() {
-
-	}
-
-	public void stopTimer() {
-
+	public int getTimerInSeconds() {
+		return stopwatch;
 	}
 
 	public void restartTimer() {
+		stopwatch = 0;
+	}
 
+	public void incrementTimer() {
+		stopwatch++;
 	}
 
 	public void creatAlarm(int seconds) {

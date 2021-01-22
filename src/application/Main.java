@@ -17,6 +17,7 @@ public class Main {
 		Time time = new Time(data);
 		time.start();
 		Stopwatch stopwatch = new Stopwatch(data);
+		stopwatch.start();
 		Alarm alarm = new Alarm(data);
 
 		Scanner sc = new Scanner(System.in);
@@ -30,7 +31,7 @@ public class Main {
 			System.out.println();
 			System.out.println("--------------- Menu ---------------");
 			System.out.println("[1]  - Adjust time");
-			System.out.println("[2]  - View schedule");
+			System.out.println("[2]  - View current time");
 			System.out.println("[3]  - Start timer");
 			System.out.println("[4]  - Stop timer");
 			System.out.println("[5]  - Restart timer");
@@ -56,23 +57,29 @@ public class Main {
 			case 2:
 				timeToString(data.getClockTimeInSeconds());
 				break;
-				
+
 			case 3:
-
+				stopwatch.setState(true);
+				System.out.println("The timer is running");
 				break;
-				
+
 			case 4:
-
+				stopwatch.setState(false);
+				System.out.println("The timer is paused");
+				System.out.println("Elapsed time");
+				timeToString(data.getTimerInSeconds());
 				break;
-				
+
 			case 5:
-
+				System.out.println("The timer is restarted");
+				stopwatch.setState(false);
+				data.restartTimer();
 				break;
-				
+
 			case 6:
 
 				break;
-				
+
 			case 99:
 				runApplication = false;
 				break;
@@ -95,7 +102,7 @@ public class Main {
 		totalSeconds += seconds;
 		return totalSeconds;
 	}
-	
+
 	public static void timeToString(int seconds) {
 		int currentSeconds, hours, minutes;
 		currentSeconds = seconds;
@@ -104,16 +111,16 @@ public class Main {
 		minutes = currentSeconds / 60;
 		currentSeconds -= minutes * 60;
 
-		System.out.printf("Current time %02d:%02d:%02d", hours, minutes, currentSeconds);
+		System.out.printf("%02d:%02d:%02d", hours, minutes, currentSeconds);
 		System.out.println();
 	}
 
 }
 
 // Menu, com opções:
-//	▪ Ajustar horário;
-//	▪ Visualizar horário;
-//	▪ Iniciar cronômetro;
-//	▪ Parar cronômetro (e mostrar valor atual);
-//	▪ Zerar cronômetro;
+//	▪ Ajustar horário; OK
+//	▪ Visualizar horário; OK
+//	▪ Iniciar cronômetro; OK
+//	▪ Parar cronômetro (e mostrar valor atual); OK
+//	▪ Zerar cronômetro; OK
 //	▪ Definir alarme;
